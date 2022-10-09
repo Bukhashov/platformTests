@@ -1,7 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Method: GET, POST');
-header("Content-type: application/json; charset=utf-8");
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -14,7 +11,7 @@ function jwtEncode($userID, $userEmail){
     $payload = [
         'iss' => 'http://localhost/',
         'aud' => 'http://localhost/',
-        'exp' => time()+3600,
+        'exp' => time()+10000,
         'data' => [
             'id' => $userID,
             'email' => $userEmail
